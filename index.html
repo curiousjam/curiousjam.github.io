@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeza Mancenido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fontChange {
+            0%, 32% {
+                font-family: Georgia, serif;
+            }
+            33%, 65% {
+                font-family: 'Merriweather', serif;
+            }
+            66%, 100% {
+                font-family: 'Times New Roman', Times, serif;
+            }
+        }
+
+        /* Text selection styles */
+        ::selection {
+            background-color: rgb(204, 204, 238); /* Periwinkle blue */
+            color: inherit;
+        }
+        ::-moz-selection {
+            background-color: rgb(204, 204, 238); /* Periwinkle blue */
+            color: inherit;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .social-links {
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        a {
+            color: rgb(23, 23, 23);
+            text-decoration-line: underline;
+            text-decoration-color: rgb(200, 200, 200);
+            text-underline-offset: 2px;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            font-style: italic;
+            font-weight: 300;
+            color: rgb(120, 120, 120);
+            animation: fontChange 3s infinite;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration-line: underline;
+            text-decoration-color: rgb(200, 200, 200);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sara Du</h1>
+        <nav>
+            <a href="#">Investing</a>
+            <a href="#">Press</a>
+        </nav>
+    </header>
+
+    <main>
+        <p>
+            I cofounded <a href="#">Alloy</a>, a modern iPaaS backed by $27M from a16z, Bain, Y
+            Combinator, & others. These days I'm thinking a lot about AI agents.
+
+        <p>
+            In my spare time I enjoy studying technology more broadly — history,
+            market currents, emerging research. I also support other founders as an
+            angel, see more on my <a href="#">investing</a> page.
+        </p>
+
+        <p>
+            I'm a self-taught engineer, Harvard dropout, YC grad, & Thiel Fellow. I grew
+            up in Atlanta and currently reside in SF.
+        </p>
+
+        <div class="social-links">
+            <div>
+                <a href="#">LinkedIn</a> (/saradu)
+            </div>
+            <div>
+                <a href="#">Twitter</a> (@saraduit)
+            </div>
+            <div>
+                <a href="#">Instagram</a> (@sarad.u)
+            </div>
+            <div>
+                <a href="#">Substack</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
