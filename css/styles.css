@@ -1,0 +1,233 @@
+/* Base styles with optimized font rendering */
+:root {
+    --text-primary: rgb(23, 23, 23);
+    --text-secondary: rgb(120, 120, 120);
+    --underline-color: rgb(200, 200, 200);
+    --selection-color: rgb(204, 204, 238);
+}
+
+/* Font animation for link hovers */
+@keyframes fontChange {
+    0%, 32% {
+        font-family: Georgia, serif;
+    }
+    33%, 65% {
+        font-family: 'Merriweather', serif;
+    }
+    66%, 100% {
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+/* Optimized text selection styles */
+::selection {
+    background-color: var(--selection-color);
+    color: inherit;
+}
+
+::-moz-selection {
+    background-color: var(--selection-color);
+    color: inherit;
+}
+
+/* Enhanced base styles with optimized font rendering */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    color: var(--text-primary);
+    
+    /* Optimized font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 350;
+    
+    /* System font optimization */
+    font-feature-settings: 'kern' 1;
+    font-kerning: normal;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 600px) {
+    body {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    body {
+        padding: 4rem 3rem;
+    }
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 1.125rem; /* Reduced size */
+    font-weight: 350;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 1.625rem; /* Reduced size */
+    }
+}
+
+@media (min-width: 900px) {
+    h1 {
+        font-size: 2.125rem; /* Reduced size */
+    }
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    nav {
+        flex-direction: row;
+    }
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration-line: underline;
+    text-decoration-color: var(--underline-color);
+}
+
+/* Main content styles */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Social links section */
+.social-links {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Enhanced link styles */
+a {
+    color: var(--text-primary);
+    text-decoration-line: underline;
+    text-decoration-color: var(--underline-color);
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+    
+    /* Optimized font rendering for links */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a:hover {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-secondary);
+    animation: fontChange 3s infinite;
+}
+
+a:focus {
+    outline: 2px dashed var(--underline-color);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+}
+
+/* High-DPI screen optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: rgb(230, 230, 230);
+        --text-secondary: rgb(180, 180, 180);
+        --underline-color: rgb(100, 100, 100);
+        --selection-color: rgb(204, 204, 238); /* Periwinkle blue */
+    }
+
+    body {
+        background-color: rgb(23, 23, 23);
+        color: var(--text-primary);
+    }
+
+    a {
+        color: var(--text-primary);
+        text-decoration-color: var(--underline-color);
+    }
+
+    a:hover {
+        color: var(--text-secondary);
+    }
+
+    ::selection {
+        background-color: var(--selection-color);
+        color: rgb(0, 0, 0); /* Black text */
+    }
+
+    ::-moz-selection {
+        background-color: var(--selection-color);
+        color: rgb(0, 0, 0); /* Black text */
+    }
+}
+
+[data-theme="dark"] {
+    --text-primary: rgb(230, 230, 230);
+    --text-secondary: rgb(180, 180, 180);
+    --underline-color: rgb(100, 100, 100);
+    --selection-color: rgb(204, 204, 238); /* Periwinkle blue */
+    background-color: rgb(23, 23, 23);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] a {
+    color: var(--text-primary);
+    text-decoration-color: var(--underline-color);
+}
+
+[data-theme="dark"] a:hover {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] ::selection {
+    background-color: var(--selection-color);
+    color: rgb(0, 0, 0); /* Black text */
+}
+
+[data-theme="dark"] ::-moz-selection {
+    background-color: var(--selection-color);
+    color: rgb(0, 0, 0); /* Black text */
+}
