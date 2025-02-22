@@ -49,8 +49,6 @@ body {
     font-feature-settings: 'kern' 1;
     font-kerning: normal;
     -webkit-text-size-adjust: 100%;
-    background-color: white;
-    color: black;
 }
 
 @media (min-width: 600px) {
@@ -232,9 +230,4 @@ a:focus {
 [data-theme="dark"] ::-moz-selection {
     background-color: var(--selection-color);
     color: rgb(0, 0, 0); /* Black text */
-}
-
-[data-theme="dark"] body {
-    background-color: black;
-    color: white;
 }
