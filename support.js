@@ -355,11 +355,8 @@
       (_, sp, name, eq) => sp + CAMEL_ATTR + name.replace(/[A-Z]/g, (c) => "-" + c.toLowerCase()) + eq
     );
     for (const [real, alias] of Object.entries(RAW_WRAP)) {
-      // Escape tag names before building a dynamic RegExp to avoid runtime errors if a name
-      // contains regex-special characters (defensive - tag names are normally plain words).
-      const realEsc = String(real).replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
       html = html.replace(
-        new RegExp("(</?)" + realEsc + "(?=[\\s>])", "gi"),
+        new RegExp("(</?)" + real + "(?=[\\s>])", "gi"),
         "$1" + alias
       );
     }
