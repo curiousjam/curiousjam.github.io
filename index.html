@@ -192,8 +192,11 @@ class Component extends DCLogic {
   CREAM_RGB = '246,240,221';
 
   pageForPath(path) {
-    if (path === '/opinions') return 'opinions';
-    if (path === '/links') return 'links';
+    // Normalize path so "/links/", "/links/index.html", and "/links" all map to '/links'
+    let p = (path || '').replace(/\/index\.html$/, '').replace(/\/+$, '');
+    if (p === '') p = '/';
+    if (p === '/opinions') return 'opinions';
+    if (p === '/links') return 'links';
     return 'about';
   }
 
