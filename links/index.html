@@ -32,18 +32,6 @@
 </script>
 <title>Links — Jeza Mancenido</title>
 <link rel="preload" as="image" href="/assets/jeza-optimized.jpg">
-<script>
-  // Normalize URLs so '/path/index.html' and '/path/' map to '/path' for SPA routing.
-  (function(){
-    try {
-      if (location.pathname && /\/index\.html$/.test(location.pathname)) {
-        var p = location.pathname.replace(/\/index\.html$/, '');
-        if (p === '') p = '/';
-        history.replaceState(null, '', p + location.search + location.hash);
-      }
-    } catch (e) { /* ignore */ }
-  })();
-</script>
 <script src="/support.js"></script>
 </head>
 <!--
