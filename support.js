@@ -132,11 +132,17 @@
   var FULL_PAGE_CSS = "html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}";
   function rootNameForDocument(doc, loc) {
     let bootPath = loc.pathname || "";
+    // Normalize common index paths so /path/index.html -> /path for correct root resolution
+    try {
+      if (/\/index\.html$/.test(bootPath)) {
+        bootPath = bootPath.replace(/\/index\.html$/, '') || '/';
+      }
+    } catch (e) {}
     if (!/\.dc\.html?$/i.test(safeDecode(bootPath))) {
       try {
         bootPath = new URL(doc.baseURI || "/").pathname;
-      } catch {
-      }
+        if (/\/index\.html$/.test(bootPath)) bootPath = bootPath.replace(/\/index\.html$/, '') || '/';
+      } catch {}
     }
     return dcNameFromPath(bootPath);
   }
