@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Plain-text profile for people, AI crawlers and assistants (https://llmstxt.org)
+LLMs-txt: https://www.jezamancenido.com/llms.txt
+# Same file: https://www.jezamancenido.com/.well-known/llms.txt
+
 Sitemap: https://www.jezamancenido.com/sitemap.xml
