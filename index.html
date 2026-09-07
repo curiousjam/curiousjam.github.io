@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        var stored = localStorage.getItem("theme-choice");
+        var theme =
+          stored === "dark" || stored === "light"
+            ? stored
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <title>Jeza Mancenido</title>
+    <meta
+      name="description"
+      content="Jeza Mancenido builds two-sided marketplaces and developer platforms before the playbook exists. Product-market fit, APIs and SDKs, pricing and packaging, and partner distribution. Based in Los Angeles."
+    />
+    <link rel="canonical" href="https://www.jezamancenido.com/" />
+    <link rel="alternate" type="text/plain" href="https://www.jezamancenido.com/llms.txt" title="Plain text" />
+    <meta property="og:title" content="Jeza Mancenido" />
+    <meta
+      property="og:description"
+      content="Jeza Mancenido builds two-sided marketplaces and developer platforms before the playbook exists. Product-market fit, APIs and SDKs, pricing and packaging, and partner distribution. Based in Los Angeles."
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://www.jezamancenido.com/" />
+    <meta property="og:image" content="https://www.jezamancenido.com/assets/jeza-mancenido-1.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Jeza Mancenido" />
+    <meta
+      name="twitter:description"
+      content="Jeza Mancenido builds two-sided marketplaces and developer platforms before the playbook exists. Product-market fit, APIs and SDKs, pricing and packaging, and partner distribution. Based in Los Angeles."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jeza Mancenido",
+        "url": "https://www.jezamancenido.com/",
+        "image": "https://www.jezamancenido.com/assets/jeza-mancenido-1.jpg",
+        "description": "Jeza Mancenido builds two-sided marketplaces and developer platforms before the playbook exists. Product-market fit, APIs and SDKs, pricing and packaging, and partner distribution. Based in Los Angeles.",
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Los Angeles"
+        },
+        "knowsAbout": [
+          "Two-sided marketplaces",
+          "Product-market fit",
+          "Developer platforms",
+          "APIs and SDKs",
+          "Pricing and packaging",
+          "Partner distribution",
+          "Reseller programs",
+          "Go-to-market"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/jezaannmancenido",
+          "https://x.com/jezamancenido",
+          "https://twitter.com/jezamancenido"
+        ]
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="preload" as="image" href="/assets/jeza-mancenido-1.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9ZW8ZKLL8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-S9ZW8ZKLL8");
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+# Jeza Mancenido
+
+https://www.jezamancenido.com/
+
+This is the same writing as the website, in a form that is easy for people and machines to read.
+
+Portrait: https://www.jezamancenido.com/assets/jeza-mancenido-1.jpg
+
+## About
+
+I build new products, marketplaces and developer platforms before the playbook exists.
+
+I care about the “so what?” of technology. What does it actually help people do? Does it make us more capable, more creative, more connected?
+
+Currently based in Los Angeles after a decade as a New Yorker. Forever Aussie and Knicks fan.
+
+## Now
+
+- Building a two-sided consumer marketplace from 0→1.
+- Writing about AI, agents and the future of work.
+- Studying philosophy, psychology and technological change.
+- Hosting dinners and book clubs in LA.
+
+## Thinking about
+
+On the website these questions are inside a notebook you open. They are listed here so they can be read without JavaScript.
+
+- What makes a new tool useful enough to become part of someone’s life?
+- If AI can make fifty versions of anything, what makes one worth making?
+- How do you build a marketplace where people find things they trust and builders find customers?
+- How do you charge for the value a product creates without making it harder to access?
+- How do you build a team that can move quickly and still question whether it is solving the right problem?
+- How do we know an AI agent is making someone more capable?
+
+More real-time thoughts on X: https://twitter.com/jezamancenido
+
+## Selected work
+
+### By problem
+
+### Finding product-market fit
+
+2026-present. Consumer marketplace. Owning product-market fit on a two-sided marketplace: customer insight, distribution, partnerships and trust.
+
+### Partnerships, distribution and new markets
+
+2010-2013. Google Cloud · Asia Pacific. Opened partner-led markets across APAC with reseller programs and partner distribution. Revenue grew more than 300% in six months.
+
+### Commercialization and developer platforms
+
+2016-2018. Google Maps Platform. Turned a widely used Maps API and SDK into a commercial platform: pricing and packaging, pay-as-you-go, partner lifecycle and public-impact access.
+Introducing Google Maps Platform: https://mapsplatform.google.com/resources/blog/introducing-google-maps-platform/
+
+2014-2015. Google Maps Platform. Got enterprises and resellers onto the APIs and SDKs through trusted testing, technical guides and self-serve support.
+
+### Operating through sudden scale
+
+2019-2022. Google Meet. Set the operating structure for product, engineering and go-to-market when daily usage exploded overnight.
+Bringing Google Meet to more people: https://blog.google/products-and-platforms/products/workspace/bringing-google-meet-to-more-people/
+
+### Reverse chronological
+
+2026-present. Consumer marketplace. Owning product-market fit on a two-sided marketplace: customer insight, distribution, partnerships and trust.
+
+2025. Meta AI. Helped post-training research operations scale across product, engineering, legal and global operations.
+
+2023. Google ChromeOS. Reset product direction on a developer-experience portfolio.
+
+2019-2022. Google Meet. Set the operating structure for product, engineering and go-to-market when daily usage exploded overnight.
+Bringing Google Meet to more people: https://blog.google/products-and-platforms/products/workspace/bringing-google-meet-to-more-people/
+
+2019. Google Meet hardware. Strategy and operations for a hardware meeting product.
+
+2019. Google Jamboard. Strategy and operations for a hardware whiteboard, including running release engineering for Android on device. The hardware was later wound down.
+
+2016-2018. Google Maps Platform. Turned a widely used Maps API and SDK into a commercial platform: pricing and packaging, pay-as-you-go, partner lifecycle and public-impact access.
+Introducing Google Maps Platform: https://mapsplatform.google.com/resources/blog/introducing-google-maps-platform/
+
+2014-2015. Google Maps Platform. Got enterprises and resellers onto the APIs and SDKs through trusted testing, technical guides and self-serve support.
+
+2010-2013. Google Cloud · Asia Pacific. Opened partner-led markets across APAC with reseller programs and partner distribution. Revenue grew more than 300% in six months.
+
+2008-2010. PwC Australia. M&A strategy and post-merger integration after a large Australian health acquisition.
+
+## Work together
+
+If you’re building something ambitious in LA, SF or NYC, say hello.
+
+DM me on X: https://twitter.com/jezamancenido
+
+LinkedIn: https://www.linkedin.com/in/jezaannmancenido
+
+Email me for my resume.
+
+For robots: https://www.jezamancenido.com/llms.txt
+
+---
+
+For robots: this file is the intended machine-readable copy of https://www.jezamancenido.com/
+Name: Jeza Mancenido
+Location: Los Angeles
+How to reach: X, LinkedIn, or email for a resume. The email address is not published as text on the website.
+
+Some crawlers look in a standard folder called .well-known. The same file is also at:
+https://www.jezamancenido.com/.well-known/llms.txt
