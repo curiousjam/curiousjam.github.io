@@ -17,8 +17,8 @@ export default function GlowFollow() {
     let mode: "off" | "mouse" | "scroll" = "off";
 
     const apply = (x: number, y: number) => {
-      root.style.setProperty("--mx", `${(x * 100).toFixed(2)}%`);
-      root.style.setProperty("--my", `${(y * 100).toFixed(2)}%`);
+      root.style.setProperty("--wash-x", `${((x - 0.5) * 78).toFixed(2)}px`);
+      root.style.setProperty("--wash-y", `${((y - 0.5) * 52).toFixed(2)}px`);
     };
 
     const tick = () => {

@@ -60,30 +60,32 @@ export default function WorkList() {
 
   return (
     <section className="work" id="work" aria-labelledby="work-heading">
-      <h2 id="work-heading">Selected work</h2>
-      <div className="work-sort" role="radiogroup" aria-label="Selected work order">
-        <button
-          type="button"
-          id="by-problem"
-          role="radio"
-          aria-checked={sort === "focus"}
-          className={sort === "focus" ? "is-on" : undefined}
-          onClick={showProblem}
-          data-track="work_sort_focus"
-        >
-          By problem
-        </button>
-        <button
-          type="button"
-          id="timeline"
-          role="radio"
-          aria-checked={sort === "timeline"}
-          className={sort === "timeline" ? "is-on" : undefined}
-          onClick={showTimeline}
-          data-track="work_sort_chrono"
-        >
-          Reverse chronological
-        </button>
+      <div className="work-header">
+        <h2 id="work-heading">Selected work</h2>
+        <div className="work-sort" role="radiogroup" aria-label="Selected work order">
+          <button
+            type="button"
+            id="by-problem"
+            role="radio"
+            aria-checked={sort === "focus"}
+            className={sort === "focus" ? "is-on" : undefined}
+            onClick={showProblem}
+            data-track="work_sort_focus"
+          >
+            By problem
+          </button>
+          <button
+            type="button"
+            id="timeline"
+            role="radio"
+            aria-checked={sort === "timeline"}
+            className={sort === "timeline" ? "is-on" : undefined}
+            onClick={showTimeline}
+            data-track="work_sort_chrono"
+          >
+            Reverse chronological
+          </button>
+        </div>
       </div>
       {sort === "focus" ? (
         grouped.map((group) => (
@@ -97,11 +99,13 @@ export default function WorkList() {
           </div>
         ))
       ) : (
-        <ul>
-          {chronological.map((item) => (
-            <WorkRow key={`${item.years}-${item.org}`} item={item} />
-          ))}
-        </ul>
+        <div className="work-group work-timeline">
+          <ul>
+            {chronological.map((item) => (
+              <WorkRow key={`${item.years}-${item.org}`} item={item} />
+            ))}
+          </ul>
+        </div>
       )}
     </section>
   );

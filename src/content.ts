@@ -36,10 +36,46 @@ export const about = [
 export const together =
   "If you’re building something ambitious in LA, SF or NYC, say hello.";
 
+export type IndexEntry = {
+  meta: string;
+  title: string;
+  description: string;
+  href?: string;
+  linkLabel?: string;
+};
+
+export const projects: IndexEntry[] = [
+  {
+    meta: "Current experiment",
+    title: "a little museum",
+    description:
+      "A tiny museum of our current feelings—judging, suspicion, confusion and panic—made with an agent from public-domain paintings at The Met. (I am also tech Twitter.)",
+    href: "https://museum-mood.becoming.chatgpt.site/",
+    linkLabel: "visit mood ↗",
+  },
+  {
+    meta: "Independent · Ongoing",
+    title: "a personal site",
+    description:
+      "A place to try new interfaces, share current projects and make a professional portfolio feel more like the person behind it.",
+  },
+];
+
+export const writing: IndexEntry[] = [
+  {
+    meta: "Current notes",
+    title: "working theories",
+    description:
+      "Working theories about AI, agents, marketplaces and the future of work, shared on X while the ideas are still taking shape.",
+    href: social.twitter,
+    linkLabel: "X ↗",
+  },
+];
+
 export const now = [
   "Building a two-sided consumer marketplace from 0→1.",
-  "Writing about AI, agents and the future of work.",
-  "Studying philosophy, psychology and technological change.",
+  "Working theories about AI, agents and the future of work.",
+  "Trying new AI tools and studying philosophy, psychology and technological change.",
   "Hosting dinners and book clubs in LA.",
 ];
 export type WorkCategory = "gtm" | "ai" | "platforms" | "partnerships" | "scale" | "earlier";

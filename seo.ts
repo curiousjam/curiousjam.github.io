@@ -116,7 +116,7 @@ ${now.map((line) => `- ${line}`).join("\n")}
 
 ## Thinking about
 
-On the website these questions are inside a notebook you open. They are listed here so they can be read without JavaScript.
+On the website these questions rotate in a short list. They are listed here so they can be read without JavaScript.
 
 ${questions.map((line) => `- ${line}`).join("\n")}
 

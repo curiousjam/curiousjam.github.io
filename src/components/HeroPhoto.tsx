@@ -18,7 +18,7 @@ function sectionFace(): Face {
   return "artsy";
 }
 
-export default function HeroPhoto() {
+export default function HeroPhoto({ onCompactChange }: { onCompactChange?: (compact: boolean) => void }) {
   const slotRef = useRef<HTMLDivElement>(null);
   const [face, setFace] = useState<Face>("artsy");
   const [compact, setCompact] = useState(false);
@@ -30,7 +30,9 @@ export default function HeroPhoto() {
       setFace(sectionFace());
       const slot = slotRef.current;
       if (!slot) return;
-      setCompact(slot.getBoundingClientRect().top < 8);
+      const nextCompact = slot.getBoundingClientRect().bottom < 78;
+      setCompact(nextCompact);
+      onCompactChange?.(nextCompact);
     };
     const onScroll = () => {
       if (raf) return;
@@ -46,7 +48,7 @@ export default function HeroPhoto() {
       window.removeEventListener("resize", onScroll);
       window.removeEventListener("hashchange", sync);
     };
-  }, []);
+  }, [onCompactChange]);
 
   return (
     <div className="hero-slot" ref={slotRef}>
@@ -70,7 +72,11 @@ export default function HeroPhoto() {
               loading={item.id === "artsy" ? "eager" : "lazy"}
               fetchPriority={item.id === "artsy" ? "high" : "low"}
               className={face === item.id ? "is-on" : undefined}
-              style={{ objectPosition: item.position }}
+              style={{
+                objectPosition: item.position,
+                transform: item.id === "artsy" ? "translateX(2%) scale(1.1)" : undefined,
+                transformOrigin: "center 35%",
+              }}
             />
           ))}
         </span>
