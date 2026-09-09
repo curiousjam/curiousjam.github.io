@@ -17,13 +17,13 @@ Currently based in Los Angeles after a decade as a New Yorker. Forever Aussie an
 ## Now
 
 - Building a two-sided consumer marketplace from 0→1.
-- Writing about AI, agents and the future of work.
-- Studying philosophy, psychology and technological change.
+- Working theories about AI, agents and the future of work.
+- Trying new AI tools and studying philosophy, psychology and technological change.
 - Hosting dinners and book clubs in LA.
 
 ## Thinking about
 
-On the website these questions are inside a notebook you open. They are listed here so they can be read without JavaScript.
+On the website these questions rotate in a short list. They are listed here so they can be read without JavaScript.
 
 - What makes a new tool useful enough to become part of someone’s life?
 - If AI can make fifty versions of anything, what makes one worth making?
