@@ -50,7 +50,7 @@ export const projects: IndexEntry[] = [
     title: "a little museum",
     description:
       "A tiny museum of our current feelings—judging, suspicion, confusion and panic—made with an agent from public-domain paintings at The Met. (I am also tech Twitter.)",
-    href: "https://museum-mood.becoming.chatgpt.site/",
+    href: "https://mood.jezamancenido.com/",
     linkLabel: "visit mood ↗",
   },
   {
@@ -71,6 +71,12 @@ export const writing: IndexEntry[] = [
     linkLabel: "X ↗",
   },
 ];
+
+export const gatheringPost =
+  "https://x.com/jezamancenido/status/2097024514609815948?s=20";
+export const moodUrl = "https://mood.jezamancenido.com/";
+export const tinkering =
+  "Experimenting with art and science, powered by agents.";
 
 export const now = [
   "Building a two-sided consumer marketplace from 0→1.",

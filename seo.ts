@@ -1,11 +1,14 @@
 import {
   about,
+  gatheringPost,
+  moodUrl,
   now,
   problemWorkGroups,
   profile,
   questions,
   reverseChronologicalWork,
   social,
+  tinkering,
   together,
   type WorkRole,
 } from "./src/content.ts";
@@ -112,7 +115,11 @@ ${about.join("\n\n")}
 
 ## Now
 
-${now.map((line) => `- ${line}`).join("\n")}
+- ${now[0]}
+- ${now[1]} ${social.twitter}
+- ${now[2]}
+- ${now[3]} ${gatheringPost}
+- ${tinkering} ${moodUrl}
 
 ## Thinking about
 

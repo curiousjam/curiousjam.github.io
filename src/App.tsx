@@ -8,10 +8,13 @@ import QuestionNotes from "./components/QuestionNotes";
 import WorkList from "./components/WorkList";
 import {
   about,
+  gatheringPost,
   mailComposeHref,
+  moodUrl,
   now,
   profile,
   social,
+  tinkering,
   together,
 } from "./content";
 
@@ -150,10 +153,10 @@ export default function App() {
             <section className="now" id="now" aria-labelledby="now-heading">
               <h2 id="now-heading">Now</h2>
               <dl>
-                {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer">X ↗</a> : null}{index === 3 ? <a className="text-link" href="https://x.com/jezamancenido/status/2097024514609815948?s=20" target="_blank" rel="noreferrer">X ↗</a> : null}</dd></div>)}
+                {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer">X ↗</a> : null}{index === 3 ? <a className="text-link" href={gatheringPost} target="_blank" rel="noreferrer">X ↗</a> : null}</dd></div>)}
                 <div>
                   <dt>Tinkering</dt>
-                  <dd>Experimenting with art and science, powered by agents. <a className="text-link" href="https://museum-mood.becoming.chatgpt.site/" target="_blank" rel="noreferrer" aria-label="Visit the museum experiment">👁️ 👁️ ↗</a></dd>
+                  <dd>{tinkering} <a className="text-link" href={moodUrl} target="_blank" rel="noreferrer" aria-label="Visit the museum experiment">👁️ 👁️ ↗</a></dd>
                 </div>
               </dl>
             </section>
