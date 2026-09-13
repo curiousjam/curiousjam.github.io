@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { profile } from "../content";
 
 type Face = "artsy" | "twitter" | "work";
@@ -22,6 +22,12 @@ export default function HeroPhoto({ onCompactChange }: { onCompactChange?: (comp
   const slotRef = useRef<HTMLDivElement>(null);
   const [face, setFace] = useState<Face>("artsy");
   const [compact, setCompact] = useState(false);
+
+  const onPhotoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!window.matchMedia("(max-width: 760px)").matches) return;
+    event.preventDefault();
+    setFace((current) => FACES[(FACES.findIndex((item) => item.id === current) + 1) % FACES.length].id);
+  };
 
   useEffect(() => {
     let raf = 0;
@@ -58,6 +64,7 @@ export default function HeroPhoto({ onCompactChange }: { onCompactChange?: (comp
         aria-label={`${profile.photoAlt}. Back to top`}
         data-track="back_to_top"
         data-hero-photo
+        onClick={onPhotoClick}
       >
         <span className="hero-clip">
           {FACES.map((item) => (

@@ -139,7 +139,7 @@ export default function App() {
               <p className="intro-lede">I build new <a className="intro-link" href="#resume-role-product_management" data-track="intro_product_management">products</a>, <a className="intro-link" href="#resume-role-marketplace" data-track="intro_marketplace">marketplaces</a> and <a className="intro-link" href="#resume-role-platforms" data-track="intro_developer_platform">developer platforms</a> before the playbook exists.</p>
               <div className="about-copy">
                 <p>I care most about the “so what?” of technology. What does it actually help people do? The best tools make us feel more capable, more creative, and more connected.</p>
-                <p>Currently based in Los Angeles after a decade as a New Yorker. Knicks fan, Grand Slam spectator, now following the NFL. I still call Australia home.</p>
+                <p>Currently based in Los Angeles after a decade as a New Yorker. Knicks fan, Grand Slam spectator, following the NFL. I still call Australia home.</p>
                 <p className="thinking-link"><a className="intro-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="intro_x">Thinking aloud on X ↗</a></p>
               </div>
             </div>

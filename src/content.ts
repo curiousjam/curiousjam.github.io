@@ -30,7 +30,7 @@ export function mailComposeHref() {
 export const about = [
   "I build new products, marketplaces and developer platforms before the playbook exists.",
   "I care most about the “so what?” of technology. What does it actually help people do? The best tools make us feel more capable, more creative, and more connected.",
-  "Currently based in Los Angeles after a decade as a New Yorker. Knicks fan, Grand Slam spectator, now following the NFL. I still call Australia home.",
+  "Currently based in Los Angeles after a decade as a New Yorker. Knicks fan, Grand Slam spectator, following the NFL. I still call Australia home.",
 ];
 
 export const together =

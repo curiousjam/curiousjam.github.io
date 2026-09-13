@@ -203,8 +203,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .work { padding-top: 48px; }
   .resume-search { min-height: 54px; padding-left: 16px; }
   .resume-search-value { font-size: 14px; }
-  .resume-queries { display: grid; grid-template-columns: 1fr; gap: 8px; }
-  .resume-queries button { width: 100%; }
+  .resume-queries { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
+  .resume-queries button { width: auto; min-height: 40px; padding: 7px 13px; }
   .resume-results-header { align-items: flex-start; gap: 18px; margin-top: 44px; }
   .resume-results-header button { max-width: 140px; text-align: right; line-height: 1.4; }
   .index-section, .contact { grid-template-columns: repeat(4,minmax(0,1fr)); row-gap: 26px; }
