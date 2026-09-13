@@ -2,105 +2,121 @@
 
 https://www.jezamancenido.com/
 
-This is the same writing as the website, in a form that is easy for people and machines to read.
-
-Portrait: https://www.jezamancenido.com/assets/jeza-mancenido-1.jpg
-
 ## About
 
 I build new products, marketplaces and developer platforms before the playbook exists.
 
-I care about the “so what?” of technology. What does it actually help people do? Does it make us more capable, more creative, more connected?
+I care most about the "so what?" of technology. What does it actually help people do? The best tools make us feel more capable, more creative, and more connected.
 
-Currently based in Los Angeles after a decade as a New Yorker. Forever Aussie and Knicks fan.
+Currently based in Los Angeles after a decade as a New Yorker. Knicks fan, Grand Slam spectator, now following the NFL. I still call Australia home.
 
 ## Now
 
-- Building a two-sided consumer marketplace from 0→1.
-- Working theories about AI, agents and the future of work. https://twitter.com/jezamancenido
-- Trying new AI tools and studying philosophy, psychology and technological change.
-- Hosting dinners and book clubs in LA. https://x.com/jezamancenido/status/2097024514609815948?s=20
-- Experimenting with art and science, powered by agents. https://mood.jezamancenido.com/
+Building a two-sided consumer marketplace from 0->1.
+Working theories about AI, agents and the future of work.
+Trying new AI tools and studying philosophy, psychology and technological change.
+Hosting dinners and book clubs in LA.
 
-## Thinking about
+## Work
 
-On the website these questions rotate in a short list. They are listed here so they can be read without JavaScript.
+2026-present - Consumer marketplace
+Owning product-market fit on a two-sided marketplace: customer insight, distribution, partnerships and trust. Building an AI-first operating model with agents embedded in the team's day-to-day work.
 
-- What makes a new tool useful enough to become part of someone’s life?
-- If AI can make fifty versions of anything, what makes one worth making?
-- How do you build a marketplace where people find things they trust and builders find customers?
-- How do you charge for the value a product creates without making it harder to access?
-- How do you build a team that can move quickly and still question whether it is solving the right problem?
-- How do we know an AI agent is making someone more capable?
+2025 - Meta AI
+Helped post-training research operations scale across product, engineering, legal and global operations.
 
-More real-time thoughts on X: https://twitter.com/jezamancenido
+2023 - Google ChromeOS
+Reset product direction on a developer-experience portfolio.
 
-## Selected work
+2019-2022 - Google Meet
+Set the operating structure for product, engineering and go-to-market when daily usage exploded overnight. - Bringing Google Meet to more people: https://blog.google/products-and-platforms/products/workspace/bringing-google-meet-to-more-people/
 
-### By problem
+2019 - Google Meet hardware
+Strategy and operations for a hardware meeting product.
 
-### Finding product-market fit
+2019 - Google Jamboard
+Strategy and operations for a hardware whiteboard, including running release engineering for Android on device. The hardware was later wound down.
 
-2026-present. Consumer marketplace. Owning product-market fit on a two-sided marketplace: customer insight, distribution, partnerships and trust.
+2015-2018 - Google Maps Platform
+Turned a widely used Maps API and SDK into a commercial platform: pricing and packaging, pay-as-you-go, partner lifecycle and public-impact access. - Introducing Google Maps Platform: https://mapsplatform.google.com/resources/blog/introducing-google-maps-platform/
 
-### Partnerships, distribution and new markets
+2014 - Google Maps Platform
+Got enterprises and resellers onto the APIs and SDKs through trusted testing, technical guides and self-serve support.
 
-2010-2013. Google Cloud · Asia Pacific. Opened partner-led markets across APAC with reseller programs and partner distribution. Revenue grew more than 300% in six months.
+2010-2013 - Google Cloud  -  Asia Pacific
+Opened partner-led markets across APAC with reseller programs and partner distribution. Revenue grew more than 300% in six months.
 
-### Commercialization and developer platforms
+2008-2010 - PwC  -  Australia
+M&A strategy and post-merger integration after a large Australian health acquisition.
 
-2016-2018. Google Maps Platform. Turned a widely used Maps API and SDK into a commercial platform: pricing and packaging, pay-as-you-go, partner lifecycle and public-impact access.
-Introducing Google Maps Platform: https://mapsplatform.google.com/resources/blog/introducing-google-maps-platform/
+## Lenses
 
-2014-2015. Google Maps Platform. Got enterprises and resellers onto the APIs and SDKs through trusted testing, technical guides and self-serve support.
+### Product partnerships
+- 2026-present - Consumer marketplace
+- 2019 - Google Meet hardware
+- 2015-2018 - Google Maps Platform
+- 2014 - Google Maps Platform
+- 2010-2013 - Google Cloud  -  Asia Pacific
 
-### Operating through sudden scale
+### Marketplace
+- 2026-present - Consumer marketplace
+- 2019-2022 - Google Meet
+- 2015-2018 - Google Maps Platform
+- 2014 - Google Maps Platform
+- 2010-2013 - Google Cloud  -  Asia Pacific
 
-2019-2022. Google Meet. Set the operating structure for product, engineering and go-to-market when daily usage exploded overnight.
-Bringing Google Meet to more people: https://blog.google/products-and-platforms/products/workspace/bringing-google-meet-to-more-people/
+### 0->1
+- 2026-present - Consumer marketplace
+- 2015-2018 - Google Maps Platform
+- 2010-2013 - Google Cloud  -  Asia Pacific
 
-### Reverse chronological
+### Developer platform
+- 2023 - Google ChromeOS
+- 2019-2022 - Google Meet
+- 2015-2018 - Google Maps Platform
+- 2014 - Google Maps Platform
 
-2026-present. Consumer marketplace. Owning product-market fit on a two-sided marketplace: customer insight, distribution, partnerships and trust.
+### Product management
+- 2023 - Google ChromeOS
+- 2019-2022 - Google Meet
+- 2019 - Google Jamboard
+- 2015-2018 - Google Maps Platform
+- 2014 - Google Maps Platform
 
-2025. Meta AI. Helped post-training research operations scale across product, engineering, legal and global operations.
+### Program management
+- 2026-present - Consumer marketplace
+- 2025 - Meta AI
+- 2019-2022 - Google Meet
+- 2019 - Google Meet hardware
+- 2019 - Google Jamboard
+- 2015-2018 - Google Maps Platform
+- 2014 - Google Maps Platform
+- 2010-2013 - Google Cloud  -  Asia Pacific
 
-2023. Google ChromeOS. Reset product direction on a developer-experience portfolio.
+### People management
+- 2019-2022 - Google Meet
+- 2019 - Google Meet hardware
+- 2019 - Google Jamboard
+- 2015-2018 - Google Maps Platform
+- 2014 - Google Maps Platform
 
-2019-2022. Google Meet. Set the operating structure for product, engineering and go-to-market when daily usage exploded overnight.
-Bringing Google Meet to more people: https://blog.google/products-and-platforms/products/workspace/bringing-google-meet-to-more-people/
+### Product strategy & operations
+- 2026-present - Consumer marketplace
+- 2023 - Google ChromeOS
+- 2019-2022 - Google Meet
+- 2019 - Google Meet hardware
+- 2019 - Google Jamboard
+- 2025 - Meta AI
+- 2015-2018 - Google Maps Platform
 
-2019. Google Meet hardware. Strategy and operations for a hardware meeting product.
+### AI operations
+- 2026-present - Consumer marketplace
+- 2025 - Meta AI
 
-2019. Google Jamboard. Strategy and operations for a hardware whiteboard, including running release engineering for Android on device. The hardware was later wound down.
+## Contact
 
-2016-2018. Google Maps Platform. Turned a widely used Maps API and SDK into a commercial platform: pricing and packaging, pay-as-you-go, partner lifecycle and public-impact access.
-Introducing Google Maps Platform: https://mapsplatform.google.com/resources/blog/introducing-google-maps-platform/
+If you're building something ambitious in LA, SF or NYC, say hello.
 
-2014-2015. Google Maps Platform. Got enterprises and resellers onto the APIs and SDKs through trusted testing, technical guides and self-serve support.
-
-2010-2013. Google Cloud · Asia Pacific. Opened partner-led markets across APAC with reseller programs and partner distribution. Revenue grew more than 300% in six months.
-
-2008-2010. PwC Australia. M&A strategy and post-merger integration after a large Australian health acquisition.
-
-## Work together
-
-If you’re building something ambitious in LA, SF or NYC, say hello.
-
-DM me on X: https://twitter.com/jezamancenido
-
+X: https://x.com/jezamancenido
 LinkedIn: https://www.linkedin.com/in/jezaannmancenido
-
-Email me for my resume.
-
-For robots: https://www.jezamancenido.com/llms.txt
-
----
-
-For robots: this file is the intended machine-readable copy of https://www.jezamancenido.com/
-Name: Jeza Mancenido
-Location: Los Angeles
-How to reach: X, LinkedIn, or email for a resume. The email address is not published as text on the website.
-
-Some crawlers look in a standard folder called .well-known. The same file is also at:
-https://www.jezamancenido.com/.well-known/llms.txt
+Email: available by request through the site.

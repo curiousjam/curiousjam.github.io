@@ -2,119 +2,53 @@ import { useEffect } from "react";
 
 declare global {
   interface Window {
+    dataLayer: unknown[];
     gtag?: (...args: unknown[]) => void;
   }
 }
 
-export function track(name: string, params?: Record<string, string | number | boolean>) {
-  window.gtag?.("event", name, params);
-}
+// The measurement ID is public configuration. Keep the env override for other previews,
+// with Curious Jam as the portfolio's known default so local dev cannot silently disable tracking.
+const measurementId = (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined) || "G-S9ZW8ZKLL8";
 
-function labelFor(el: HTMLElement) {
-  return (
-    el.getAttribute("data-track") ||
-    el.getAttribute("aria-label") ||
-    el.textContent?.replace(/\s+/g, " ").trim() ||
-    el.getAttribute("href") ||
-    "unknown"
-  );
-}
-
-function contentType(href: string, raw: string) {
-  if (raw === "back_to_top") return "back_to_top";
-  if (raw === "email_resume" || href.endsWith("#contact")) return "email_resume";
-  if (raw.startsWith("work_sort") || raw === "about_by_problem" || raw === "about_timeline") {
-    return "work_sort";
-  }
-  if (raw.startsWith("nav_")) return "nav";
-  if (raw.startsWith("notebook")) return "notebook";
-  if (raw.startsWith("dock_")) return "dock";
-  if (raw === "work_source") return "work_source";
-  if (href.includes("twitter.com") || href.includes("x.com")) return "x";
-  if (href.includes("linkedin.com")) return "linkedin";
-  if (href.includes("llms.txt")) return "llms";
-  return "ui";
+function pageView() {
+  window.gtag?.("event", "page_view", { page_location: window.location.href });
 }
 
 export default function Analytics() {
   useEffect(() => {
-    const seen = new Set<number>();
-
+    if (!measurementId) return;
+    window.dataLayer = window.dataLayer || [];
+    let script: HTMLScriptElement | undefined;
+    if (!window.gtag) {
+      window.gtag = (...args: unknown[]) => window.dataLayer.push(args);
+      window.gtag("js", new Date());
+      script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+      document.head.appendChild(script);
+    }
+    window.gtag("config", measurementId, { send_page_view: false });
+    pageView();
+    const onHashChange = () => pageView();
     const onClick = (event: MouseEvent) => {
-      const el = (event.target as HTMLElement | null)?.closest<HTMLElement>(
-        "a, button, [data-track]",
-      );
-      if (!el || el.classList.contains("nav-backdrop") || el.classList.contains("skip-link")) {
-        return;
-      }
-      if (el.getAttribute("aria-label") === "Close menu") return;
-
-      const href = el instanceof HTMLAnchorElement ? el.href : el.getAttribute("href") || "";
-      const raw = el.getAttribute("data-track") || "";
-      const type = contentType(href, raw);
-      const itemId = labelFor(el).slice(0, 80);
-
-      track("select_content", {
-        content_type: type,
-        item_id: itemId,
-        link_url: href.slice(0, 180),
-      });
-
-      if (type === "email_resume") {
-        track("generate_lead", {
-          method: "email",
-          item_id: "resume",
+      const target = event.target instanceof Element ? event.target.closest<HTMLElement>("[data-track]") : null;
+      const name = target?.dataset.track;
+      if (name) {
+        window.gtag?.("event", "resume_interaction", {
+          interaction: name,
+          link_url: target?.getAttribute("href") || undefined,
+          link_text: target?.textContent?.trim() || undefined,
         });
       }
     };
-
-    const onScroll = () => {
-      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      const percent = Math.min(100, Math.round((window.scrollY / max) * 100));
-      for (const mark of [25, 50, 75, 90, 100]) {
-        if (percent >= mark && !seen.has(mark)) {
-          seen.add(mark);
-          track("scroll", { percent_scrolled: mark });
-        }
-      }
-    };
-
-    const observed = new Set<string>();
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          const id = (entry.target as HTMLElement).id;
-          if (!id || observed.has(id)) continue;
-          observed.add(id);
-          track("view_item", { item_id: id, item_name: id });
-        }
-      },
-      { threshold: 0.45 },
-    );
-
-    for (const id of ["now", "thinking", "work", "together"]) {
-      const node = document.getElementById(id);
-      if (node) io.observe(node);
-    }
-
-    const onHash = () => {
-      const hash = window.location.hash.replace("#", "") || "top";
-      track("view_item", { item_id: hash, item_name: hash });
-    };
-    window.addEventListener("hashchange", onHash);
-
-    document.addEventListener("click", onClick, true);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
+    window.addEventListener("hashchange", onHashChange);
+    document.addEventListener("click", onClick);
     return () => {
-      document.removeEventListener("click", onClick, true);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("hashchange", onHash);
-      io.disconnect();
+      window.removeEventListener("hashchange", onHashChange);
+      document.removeEventListener("click", onClick);
+      script?.remove();
     };
   }, []);
-
   return null;
 }

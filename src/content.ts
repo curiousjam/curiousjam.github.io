@@ -14,7 +14,7 @@ export const profile = {
 
 export const social = {
   linkedin: "https://www.linkedin.com/in/jezaannmancenido",
-  twitter: "https://twitter.com/jezamancenido",
+  twitter: "https://x.com/jezamancenido",
   mailUser: ["jeza", "ann", "mancenido"] as const,
   mailDomain: ["gmail", "com"] as const,
 };
@@ -29,8 +29,8 @@ export function mailComposeHref() {
 
 export const about = [
   "I build new products, marketplaces and developer platforms before the playbook exists.",
-  "I care about the “so what?” of technology. What does it actually help people do? Does it make us more capable, more creative, more connected?",
-  "Currently based in Los Angeles after a decade as a New Yorker. Forever Aussie and Knicks fan.",
+  "I care most about the “so what?” of technology. What does it actually help people do? The best tools make us feel more capable, more creative, and more connected.",
+  "Currently based in Los Angeles after a decade as a New Yorker. Knicks fan, Grand Slam spectator, now following the NFL. I still call Australia home.",
 ];
 
 export const together =
@@ -46,7 +46,7 @@ export type IndexEntry = {
 
 export const projects: IndexEntry[] = [
   {
-    meta: "Current experiment",
+    meta: "Current project",
     title: "a little museum",
     description:
       "A tiny museum of our current feelings—judging, suspicion, confusion and panic—made with an agent from public-domain paintings at The Met. (I am also tech Twitter.)",
@@ -75,8 +75,9 @@ export const writing: IndexEntry[] = [
 export const gatheringPost =
   "https://x.com/jezamancenido/status/2097024514609815948?s=20";
 export const moodUrl = "https://mood.jezamancenido.com/";
+export const footballUrl = "https://football.jezamancenido.com/";
 export const tinkering =
-  "Experimenting with art and science, powered by agents.";
+  "Experimenting with new tools and agents.";
 
 export const now = [
   "Building a two-sided consumer marketplace from 0→1.",
@@ -108,7 +109,7 @@ export const work: WorkRole[] = [
     category: "gtm",
     problem: true,
     summary:
-      "Owning product-market fit on a two-sided marketplace: customer insight, distribution, partnerships and trust.",
+      "Owning product-market fit on a two-sided marketplace: customer insight, distribution, partnerships and trust. Building an AI-first operating model with agents embedded in the team’s day-to-day work.",
   },
   {
     years: "2025",
@@ -151,7 +152,7 @@ export const work: WorkRole[] = [
       "Strategy and operations for a hardware whiteboard, including running release engineering for Android on device. The hardware was later wound down.",
   },
   {
-    years: "2016-2018",
+    years: "2015-2018",
     org: "Google Maps Platform",
     category: "platforms",
     problem: true,
@@ -161,7 +162,7 @@ export const work: WorkRole[] = [
     sourceLabel: "Introducing Google Maps Platform",
   },
   {
-    years: "2014-2015",
+    years: "2014",
     org: "Google Maps Platform",
     category: "platforms",
     problem: true,
@@ -178,7 +179,7 @@ export const work: WorkRole[] = [
   },
   {
     years: "2008-2010",
-    org: "PwC Australia",
+    org: "PwC · Australia",
     category: "earlier",
     summary: "M&A strategy and post-merger integration after a large Australian health acquisition.",
   },
@@ -221,3 +222,15 @@ export function problemWorkGroups() {
 export function reverseChronologicalWork() {
   return [...work].sort((a, b) => endYear(b) - endYear(a) || startYear(b) - startYear(a));
 }
+
+export const resumeLenses: Record<string, string[]> = {
+  "Product partnerships": ["2026-present-Consumer marketplace", "2019-Google Meet hardware", "2015-2018-Google Maps Platform", "2014-Google Maps Platform", "2010-2013-Google Cloud · Asia Pacific"],
+  Marketplace: ["2026-present-Consumer marketplace", "2019-2022-Google Meet", "2015-2018-Google Maps Platform", "2014-Google Maps Platform", "2010-2013-Google Cloud · Asia Pacific"],
+  "0→1": ["2026-present-Consumer marketplace", "2015-2018-Google Maps Platform", "2010-2013-Google Cloud · Asia Pacific"],
+  "Developer platform": ["2023-Google ChromeOS", "2019-2022-Google Meet", "2015-2018-Google Maps Platform", "2014-Google Maps Platform"],
+  "Product management": ["2023-Google ChromeOS", "2019-2022-Google Meet", "2019-Google Jamboard", "2015-2018-Google Maps Platform", "2014-Google Maps Platform"],
+  "Program management": ["2026-present-Consumer marketplace", "2025-Meta AI", "2019-2022-Google Meet", "2019-Google Meet hardware", "2019-Google Jamboard", "2015-2018-Google Maps Platform", "2014-Google Maps Platform", "2010-2013-Google Cloud · Asia Pacific"],
+  "People management": ["2019-2022-Google Meet", "2019-Google Meet hardware", "2019-Google Jamboard", "2015-2018-Google Maps Platform", "2014-Google Maps Platform"],
+  "Product strategy & operations": ["2026-present-Consumer marketplace", "2023-Google ChromeOS", "2019-2022-Google Meet", "2019-Google Meet hardware", "2019-Google Jamboard", "2025-Meta AI", "2015-2018-Google Maps Platform"],
+  "AI operations": ["2026-present-Consumer marketplace", "2025-Meta AI"],
+};

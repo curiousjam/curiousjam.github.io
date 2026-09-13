@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useId, useState, type MouseEvent } from "react";
 import { flushSync } from "react-dom";
-import Analytics from "./components/Analytics";
 import HeroPhoto from "./components/HeroPhoto";
 import EmojiCursor from "./components/EmojiCursor";
 import GlowFollow from "./components/GlowFollow";
+import Analytics from "./components/Analytics";
 import QuestionNotes from "./components/QuestionNotes";
 import WorkList from "./components/WorkList";
 import {
-  about,
   gatheringPost,
   mailComposeHref,
   moodUrl,
@@ -16,6 +15,7 @@ import {
   social,
   tinkering,
   together,
+  footballUrl,
 } from "./content";
 
 type Theme = "light" | "dark";
@@ -126,9 +126,9 @@ export default function App() {
   return (
     <>
       <a className="skip-link" href="#content">Skip to content</a>
-      <Analytics />
       <GlowFollow />
       <EmojiCursor />
+      <Analytics />
       <div className="ambient-wash" aria-hidden="true" />
       <div className="reading-progress" aria-hidden="true" />
       <div className="site-shell">
@@ -136,10 +136,11 @@ export default function App() {
         <main className="page" id="content">
           <header className="intro" id="about">
             <div className="intro-copy">
-              <p className="intro-lede">{about[0]}</p>
+              <p className="intro-lede">I build new <a className="intro-link" href="#resume-role-product_management" data-track="intro_product_management">products</a>, <a className="intro-link" href="#resume-role-marketplace" data-track="intro_marketplace">marketplaces</a> and <a className="intro-link" href="#resume-role-platforms" data-track="intro_developer_platform">developer platforms</a> before the playbook exists.</p>
               <div className="about-copy">
-                <p>{about[1]}</p>
-                <p>{about[2]}</p>
+                <p>I care most about the “so what?” of technology. What does it actually help people do? The best tools make us feel more capable, more creative, and more connected.</p>
+                <p>Currently based in Los Angeles after a decade as a New Yorker. Knicks fan, Grand Slam spectator, now following the NFL. I still call Australia home.</p>
+                <p className="thinking-link"><a className="intro-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="intro_x">Thinking aloud on X ↗</a></p>
               </div>
             </div>
             <figure className="portrait">
@@ -153,10 +154,10 @@ export default function App() {
             <section className="now" id="now" aria-labelledby="now-heading">
               <h2 id="now-heading">Now</h2>
               <dl>
-                {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer">X ↗</a> : null}{index === 3 ? <a className="text-link" href={gatheringPost} target="_blank" rel="noreferrer">X ↗</a> : null}</dd></div>)}
+                {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="now_x">X ↗</a> : null}{index === 3 ? <a className="text-link" href={gatheringPost} target="_blank" rel="noreferrer" data-track="gathering_x">X ↗</a> : null}</dd></div>)}
                 <div>
                   <dt>Tinkering</dt>
-                  <dd>{tinkering} <a className="text-link" href={moodUrl} target="_blank" rel="noreferrer" aria-label="Visit the museum experiment">👁️ 👁️ ↗</a></dd>
+                  <dd>{tinkering} <span aria-hidden="true">Art </span><a className="text-link" href={moodUrl} target="_blank" rel="noreferrer" aria-label="Visit the art project" data-track="tinkering_art">👁️ 👁️ ↗</a> <span aria-hidden="true">Sports </span><a className="text-link" href={footballUrl} target="_blank" rel="noreferrer" aria-label="Visit the sports project" data-track="tinkering_sports">🏈 🃏↗</a></dd>
                 </div>
               </dl>
             </section>
@@ -171,7 +172,7 @@ export default function App() {
               <a className="text-link" href="#contact" onClick={onMail} data-track="email_resume">Email me ↗</a>
               <a className="text-link" href={social.linkedin} target="_blank" rel="noreferrer" data-track="linkedin">LinkedIn ↗</a>
               <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="x_dm">X ↗</a>
-              <a className="text-link" href="#contact" onClick={onResume} data-track="request_resume">Request résumé ↗</a>
+              <a className="text-link" href="#contact" onClick={onResume} data-track="request_resume">Request resume ↗</a>
             </div>
             <a className="robots-link" href="/llms.txt" data-track="for_robots">For robots ↗</a>
           </footer>
