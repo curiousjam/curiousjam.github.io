@@ -76,8 +76,10 @@ export const gatheringPost =
   "https://x.com/jezamancenido/status/2097024514609815948?s=20";
 export const moodUrl = "https://mood.jezamancenido.com/";
 export const footballUrl = "https://football.jezamancenido.com/";
+export const sunoUrl =
+  "https://suno.com/song/2eb98013-938c-4924-ac22-2a73e6d73f5b";
 export const tinkering =
-  "Experimenting with new tools and agents.";
+  "Experimenting with new AI tools and agents.";
 
 export const now = [
   "Building a two-sided consumer marketplace from 0→1.",

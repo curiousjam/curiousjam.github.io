@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { about, now, profile, resumeLenses, reverseChronologicalWork, social, together } from "./src/content.ts";
+import { about, footballUrl, moodUrl, now, profile, resumeLenses, reverseChronologicalWork, social, sunoUrl, tinkering, together } from "./src/content.ts";
 
 const root = dirname(fileURLToPath(import.meta.url));
 
@@ -28,6 +28,8 @@ ${about.map(plainText).join("\n\n")}
 ## Now
 
 ${now.map(plainText).join("\n")}
+
+${plainText(tinkering)} Art: ${moodUrl} Sports: ${footballUrl} Music: ${sunoUrl}
 
 ## Work
 

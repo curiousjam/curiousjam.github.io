@@ -16,6 +16,7 @@ import {
   tinkering,
   together,
   footballUrl,
+  sunoUrl,
 } from "./content";
 
 type Theme = "light" | "dark";
@@ -157,7 +158,7 @@ export default function App() {
                 {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="now_x">X ↗</a> : null}{index === 3 ? <a className="text-link" href={gatheringPost} target="_blank" rel="noreferrer" data-track="gathering_x">X ↗</a> : null}</dd></div>)}
                 <div>
                   <dt>Tinkering</dt>
-                  <dd>{tinkering} <span aria-hidden="true">Art </span><a className="text-link" href={moodUrl} target="_blank" rel="noreferrer" aria-label="Visit the art project" data-track="tinkering_art">👁️ 👁️ ↗</a> <span aria-hidden="true">Sports </span><a className="text-link" href={footballUrl} target="_blank" rel="noreferrer" aria-label="Visit the sports project" data-track="tinkering_sports">🏈 🃏↗</a></dd>
+                  <dd>{tinkering} <span aria-hidden="true">Art </span><a className="text-link" href={moodUrl} target="_blank" rel="noreferrer" aria-label="Visit the art project" data-track="tinkering_art">👁️ 👁️ ↗</a> <span aria-hidden="true">Sports </span><a className="text-link" href={footballUrl} target="_blank" rel="noreferrer" aria-label="Visit the sports project" data-track="tinkering_sports">🏈 ↗</a> <span aria-hidden="true">Music </span><a className="text-link" href={sunoUrl} target="_blank" rel="noreferrer" aria-label="Listen to the music project" data-track="tinkering_music">🎶 ↗</a></dd>
                 </div>
               </dl>
             </section>
