@@ -74,6 +74,8 @@ export const writing: IndexEntry[] = [
 
 export const gatheringPost =
   "https://x.com/jezamancenido/status/2097024514609815948?s=20";
+export const learningPost =
+  "https://x.com/jezamancenido/status/2096683302652637465?s=20";
 export const moodUrl = "https://mood.jezamancenido.com/";
 export const footballUrl = "https://football.jezamancenido.com/";
 export const sunoUrl =
@@ -84,7 +86,7 @@ export const tinkering =
 export const now = [
   "Building a two-sided consumer marketplace from 0→1.",
   "Working theories about AI, agents and the future of work.",
-  "Trying new AI tools and studying philosophy, psychology and technological change.",
+  "Studying philosophy and psychology amidst technological change.",
   "Hosting dinners and book clubs in LA.",
 ];
 export type WorkCategory = "gtm" | "ai" | "platforms" | "partnerships" | "scale" | "earlier";

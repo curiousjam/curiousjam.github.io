@@ -8,6 +8,7 @@ import QuestionNotes from "./components/QuestionNotes";
 import WorkList from "./components/WorkList";
 import {
   gatheringPost,
+  learningPost,
   mailComposeHref,
   moodUrl,
   now,
@@ -155,7 +156,7 @@ export default function App() {
             <section className="now" id="now" aria-labelledby="now-heading">
               <h2 id="now-heading">Now</h2>
               <dl>
-                {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="now_x">X ↗</a> : null}{index === 3 ? <a className="text-link" href={gatheringPost} target="_blank" rel="noreferrer" data-track="gathering_x">X ↗</a> : null}</dd></div>)}
+                {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="now_x">X ↗</a> : null}{index === 2 ? <a className="text-link" href={learningPost} target="_blank" rel="noreferrer" data-track="learning_x">X ↗</a> : null}{index === 3 ? <a className="text-link" href={gatheringPost} target="_blank" rel="noreferrer" data-track="gathering_x">X ↗</a> : null}</dd></div>)}
                 <div>
                   <dt>Tinkering</dt>
                   <dd>{tinkering} <span aria-hidden="true">Art </span><a className="text-link" href={moodUrl} target="_blank" rel="noreferrer" aria-label="Visit the art project" data-track="tinkering_art">👁️ 👁️ ↗</a> <span aria-hidden="true">Sports </span><a className="text-link" href={footballUrl} target="_blank" rel="noreferrer" aria-label="Visit the sports project" data-track="tinkering_sports">🏈 ↗</a> <span aria-hidden="true">Music </span><a className="text-link" href={sunoUrl} target="_blank" rel="noreferrer" aria-label="Listen to the music project" data-track="tinkering_music">🎶 ↗</a></dd>
