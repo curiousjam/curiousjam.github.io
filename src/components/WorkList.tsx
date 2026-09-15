@@ -139,9 +139,40 @@ function viewFromHash(): View {
   return { mode: "highlights" };
 }
 
-function WorkRow({ item }: { item: WorkRole }) {
+const ROLE_TOPICS: Record<RoleFilterId, { primary: string; secondary?: string }> = {
+  partnerships: { primary: "partnerships", secondary: "distribution and new markets" },
+  marketplace: { primary: "marketplaces", secondary: "product-market fit" },
+  zero_to_one: { primary: "0-to-1 product building", secondary: "product-market fit" },
+  platforms: { primary: "developer platforms", secondary: "APIs and SDKs" },
+  product_management: { primary: "product management", secondary: "product strategy" },
+  program_management: { primary: "program management", secondary: "operating systems" },
+  people_management: { primary: "people management", secondary: "team leadership" },
+  product: { primary: "product strategy and operations", secondary: "product-market fit" },
+  ai: { primary: "AI operations", secondary: "agents" },
+};
+
+const CATEGORY_TOPICS: Record<WorkRole["category"], string> = {
+  gtm: "product-market fit",
+  ai: "AI operations",
+  platforms: "developer platforms",
+  partnerships: "partnerships",
+  scale: "operating through scale",
+  earlier: "career history",
+};
+
+function WorkRow({ item, positionIndex, selectedContext }: { item: WorkRole; positionIndex: number; selectedContext: string }) {
+  const contentId = `career_${item.years.toLowerCase().replace(/[^a-z0-9]+/g, "_")}_${item.org.toLowerCase().replace(/[^a-z0-9]+/g, "_")}`;
   return (
-    <li>
+    <li
+      data-content-view-item={contentId}
+      data-content-view-label={`${item.years} ${item.org}`}
+      data-content-view-type="career_item"
+      data-analytics-section="work"
+      data-topic-primary={CATEGORY_TOPICS[item.category]}
+      data-topic-secondary={item.org}
+      data-position-index={positionIndex}
+      data-selected-context={selectedContext}
+    >
       <div className="work-row">
         <span className="work-years">{item.years}</span>
         <span className="work-copy">
@@ -154,6 +185,13 @@ function WorkRow({ item }: { item: WorkRole }) {
               target="_blank"
               rel="noreferrer"
               data-track={`work_source_${item.org.toLowerCase().replace(/[^a-z0-9]+/g, "_")}`}
+              data-content-id={`${contentId}_source`}
+              data-content-label={item.sourceLabel}
+              data-content-type="career_source"
+              data-topic-primary={CATEGORY_TOPICS[item.category]}
+              data-topic-secondary={item.org}
+              data-position-index={positionIndex}
+              data-selected-context={contentId}
             >
               {item.sourceLabel} ↗
             </a>
@@ -217,8 +255,16 @@ export default function WorkList() {
     window.history.pushState(null, "", "#work");
   };
 
+  const viewLabel = view.mode === "highlights"
+    ? "Selected projects"
+    : view.mode === "timeline"
+      ? "Full career timeline"
+      : ROLE_FILTERS.find((role) => role.id === view.role)?.label ?? "Selected work";
+  const selectedContext = view.mode === "role" ? `role_${view.role}` : view.mode;
+  const contentViewItems = results.map((item) => `${item.years}-${item.org}`).join("|");
+
   return (
-    <section className="work" id="work" aria-labelledby="work-heading">
+    <section className="work" id="work" aria-labelledby="work-heading" data-analytics-section="work">
       <div className="resume-work">
         <h2 id="work-heading">Work</h2>
         <div className="resume-search" aria-live="polite">
@@ -242,6 +288,12 @@ export default function WorkList() {
               aria-pressed={view.mode === "role" && view.role === role.id}
               onClick={() => showRole(role.id)}
               data-track={`resume_role_${role.id}`}
+              data-content-id={`role_filter_${role.id}`}
+              data-content-label={role.label}
+              data-content-type="role_filter"
+              data-topic-primary={ROLE_TOPICS[role.id].primary}
+              data-topic-secondary={ROLE_TOPICS[role.id].secondary}
+              data-selected-context={`role_${role.id}`}
             >
               {role.label}
             </button>
@@ -264,10 +316,17 @@ export default function WorkList() {
         ) : null}
       </div>
 
-      <div className="resume-results" id={view.mode === "timeline" ? "timeline" : undefined}>
+      <div
+        className="resume-results"
+        id={view.mode === "timeline" ? "timeline" : undefined}
+        data-content-view={view.mode}
+        data-content-view-label={viewLabel}
+        data-selected-context={selectedContext}
+        data-content-view-items={contentViewItems}
+      >
         <ul>
-          {results.map((item) => (
-            <WorkRow key={`${item.years}-${item.org}`} item={item} />
+          {results.map((item, index) => (
+            <WorkRow key={`${item.years}-${item.org}`} item={item} positionIndex={index + 1} selectedContext={selectedContext} />
           ))}
         </ul>
       </div>

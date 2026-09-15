@@ -17,6 +17,21 @@ export default function QuestionNotes() {
   const go = useCallback((direction: number) => setIndex(current => (current + direction + questions.length) % questions.length), []);
 
   useEffect(() => {
+    window.dispatchEvent(new CustomEvent("analytics-content-view", {
+      detail: {
+        section_id: "thinking",
+        section_label: "thinking",
+        content_type: "question",
+        content_id: `question_${index + 1}`,
+        content_label: questions[index],
+        topic_primary: "current interests",
+        position_index: index + 1,
+        selected_context: `question_${index + 1}`,
+      },
+    }));
+  }, [index]);
+
+  useEffect(() => {
     const onWindowKey = (event: globalThis.KeyboardEvent) => {
       if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
       const target = event.target as HTMLElement | null;
@@ -40,7 +55,7 @@ export default function QuestionNotes() {
   };
 
   return (
-    <aside ref={notes} className="question-notes" id="thinking" aria-labelledby="thinking-heading" data-no-cursor-cycle
+    <aside ref={notes} className="question-notes" id="thinking" aria-labelledby="thinking-heading" data-no-cursor-cycle data-analytics-section="thinking"
       onTouchStart={event => { const point = event.touches[0]; touch.current = { x: point.clientX, y: point.clientY }; }}
       onTouchEnd={onTouchEnd}>
       <div className="note-heading"><h2 id="thinking-heading">Questions I’m thinking about</h2></div>
@@ -51,8 +66,8 @@ export default function QuestionNotes() {
         <div className="note-controls">
           <span className="note-count" aria-label={`Question ${index + 1} of ${questions.length}`}>{String(index + 1).padStart(2, "0")} <span>/ {String(questions.length).padStart(2, "0")}</span></span>
           <div>
-            <button type="button" onClick={() => go(-1)} aria-label="Previous question" aria-keyshortcuts="ArrowLeft"><Arrow direction="previous" /></button>
-            <button type="button" onClick={() => go(1)} aria-label="Next question" aria-keyshortcuts="ArrowRight"><Arrow direction="next" /></button>
+            <button type="button" onClick={() => go(-1)} aria-label="Previous question" aria-keyshortcuts="ArrowLeft" data-track="question_previous" data-position-index={index + 1} data-selected-context={`question_${index + 1}`}><Arrow direction="previous" /></button>
+            <button type="button" onClick={() => go(1)} aria-label="Next question" aria-keyshortcuts="ArrowRight" data-track="question_next" data-position-index={index + 1} data-selected-context={`question_${index + 1}`}><Arrow direction="next" /></button>
           </div>
         </div>
       </div>

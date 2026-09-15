@@ -60,16 +60,16 @@ function SiteNav({ theme, onToggleTheme, compact }: { theme: Theme; onToggleThem
 
   return (
     <>
-      {open ? <button className="nav-backdrop" type="button" aria-label="Close menu" onClick={() => setOpen(false)} /> : null}
-      <nav className={`site-nav${open ? " is-open" : ""}${compact ? " has-portrait" : ""}`} aria-label="Sections">
-        <h1 className="nav-name"><a href="#top" aria-label="Back to top">{profile.name}</a></h1>
-        <button type="button" className="nav-toggle" aria-expanded={open} aria-controls={menuId} onClick={() => setOpen((value) => !value)}>Menu</button>
+      {open ? <button className="nav-backdrop" type="button" aria-label="Close menu" data-track="nav_backdrop_close" onClick={() => setOpen(false)} /> : null}
+      <nav className={`site-nav${open ? " is-open" : ""}${compact ? " has-portrait" : ""}`} aria-label="Sections" data-analytics-section="intro">
+        <h1 className="nav-name"><a href="#top" aria-label="Back to top" data-track="nav_name">{profile.name}</a></h1>
+        <button type="button" className="nav-toggle" aria-expanded={open} aria-controls={menuId} data-track="nav_toggle" onClick={() => setOpen((value) => !value)}>Menu</button>
         <ul id={menuId}>
           {NAV.map((item) => (
             <li key={item.href}><a href={item.href} data-track={`nav_${item.label}`} onClick={() => setOpen(false)}>{item.label}</a></li>
           ))}
         </ul>
-        <button type="button" className="theme-toggle" onClick={onToggleTheme} aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}><SunIcon /></button>
+        <button type="button" className="theme-toggle" data-track="theme_toggle" onClick={onToggleTheme} aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}><SunIcon /></button>
       </nav>
     </>
   );
@@ -127,7 +127,7 @@ export default function App() {
 
   return (
     <>
-      <a className="skip-link" href="#content">Skip to content</a>
+      <a className="skip-link" href="#content" data-track="skip_to_content">Skip to content</a>
       <GlowFollow />
       <EmojiCursor />
       <Analytics />
@@ -136,7 +136,7 @@ export default function App() {
       <div className="site-shell">
         <SiteNav theme={theme} onToggleTheme={toggleTheme} compact={compact} />
         <main className="page" id="content">
-          <header className="intro" id="about">
+          <header className="intro" id="about" data-analytics-section="intro">
             <div className="intro-copy">
               <p className="intro-lede">I build new <a className="intro-link" href="#resume-role-product_management" data-track="intro_product_management">products</a>, <a className="intro-link" href="#resume-role-marketplace" data-track="intro_marketplace">marketplaces</a> and <a className="intro-link" href="#resume-role-platforms" data-track="intro_developer_platform">developer platforms</a> before the playbook exists.</p>
               <div className="about-copy">
@@ -153,7 +153,7 @@ export default function App() {
           <QuestionNotes />
 
           <div className="present">
-            <section className="now" id="now" aria-labelledby="now-heading">
+            <section className="now" id="now" aria-labelledby="now-heading" data-analytics-section="now">
               <h2 id="now-heading">Now</h2>
               <dl>
                 {now.map((line, index) => <div key={line}><dt>{NOW_LABELS[index]}</dt><dd>{line}{index === 1 ? <a className="text-link" href={social.twitter} target="_blank" rel="noreferrer" data-track="now_x">X ↗</a> : null}{index === 2 ? <a className="text-link" href={learningPost} target="_blank" rel="noreferrer" data-track="learning_x">X ↗</a> : null}{index === 3 ? <a className="text-link" href={gatheringPost} target="_blank" rel="noreferrer" data-track="gathering_x">X ↗</a> : null}</dd></div>)}
@@ -167,7 +167,7 @@ export default function App() {
 
           <WorkList />
 
-          <footer className="contact" id="together" aria-labelledby="together-heading">
+          <footer className="contact" id="together" aria-labelledby="together-heading" data-analytics-section="contact">
             <h2 id="together-heading">Contact</h2>
             <p>{together}</p>
             <div className="contact-links">
