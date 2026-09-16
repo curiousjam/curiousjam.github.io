@@ -60,8 +60,8 @@ function SiteNav({ theme, onToggleTheme, compact }: { theme: Theme; onToggleThem
 
   return (
     <>
-      {open ? <button className="nav-backdrop" type="button" aria-label="Close menu" data-track="nav_backdrop_close" onClick={() => setOpen(false)} /> : null}
-      <nav className={`site-nav${open ? " is-open" : ""}${compact ? " has-portrait" : ""}`} aria-label="Sections" data-analytics-section="intro">
+      {open ? <button className="nav-backdrop" type="button" aria-label="Close menu" data-track="nav_backdrop_close" data-analytics-section="nav" onClick={() => setOpen(false)} /> : null}
+      <nav className={`site-nav${open ? " is-open" : ""}${compact ? " has-portrait" : ""}`} aria-label="Sections" data-analytics-section="nav">
         <h1 className="nav-name"><a href="#top" aria-label="Back to top" data-track="nav_name">{profile.name}</a></h1>
         <button type="button" className="nav-toggle" aria-expanded={open} aria-controls={menuId} data-track="nav_toggle" onClick={() => setOpen((value) => !value)}>Menu</button>
         <ul id={menuId}>
@@ -167,7 +167,7 @@ export default function App() {
 
           <WorkList />
 
-          <footer className="contact" id="together" aria-labelledby="together-heading" data-analytics-section="contact">
+          <footer className="contact" id="together" aria-labelledby="together-heading" data-analytics-section="footer">
             <h2 id="together-heading">Contact</h2>
             <p>{together}</p>
             <div className="contact-links">
